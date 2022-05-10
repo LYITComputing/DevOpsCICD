@@ -1,0 +1,19 @@
+/**
+* Asset constructor.
+@param assetSymbol Stock sticker of asset
+@param purchaseDoteTime Date asset was purchased
+* @param purchaseUnits Number of units purchased in order
+*
+@param purchasePrice Price units were purchased at
+@param marketClient Market client to be used during purchase.
+*/
+usages 2° Oisin Keeney
+public Asset(String assetSymbol, long purchaseDateTime, double purchaseUnits,
+double purchasePrice, MarketClient marketClient) {
+this.assetSymbol = assetSymbol;
+this.originalpurchaseDateTime = purchaseDateTime;
+this.originalPurchaseUnits = purchaseUnits;
+this.originalPurchasePrice = purchasePrice;
+this.sellTransactions = new ArrayList<>();
+this.marketClient = marketClient;
+}
