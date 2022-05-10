@@ -27,27 +27,7 @@ jobs:
     - name: Publish Web
       run: dotnet publish ${{ github.workspace }} --configuration ${{ env.BuildConfiguration }} --output ${{ github.workspace }}\output\
       
+      
+      
   
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: octo-demo
-        path: ${{ github.workspace }}\output\
-        
-        
-  DeployToTest:
-    runs-on: windows-latest
-    needs: OctoBuild
-    
-    steps:
-    
-    - name: Download Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: octo-demo
-        path: .\output\
-        
-    - name: Deploy to Test
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: octodemo-test
+  
