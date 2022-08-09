@@ -21,7 +21,7 @@ jobs:
         $ref = "${env:GITHUB_REF}"
         $version = $ref.Substring($ref.LastIndexOf("/") + 2)
         echo "::set-env name=version::${version}"
-    - name: Add J2 Nuget Feed
+    - name: Add Nuget Feed
       run:  |
         cd "${{ secrets.NUGETPATH }}"
 
